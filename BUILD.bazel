@@ -1,0 +1,30 @@
+load("@rules_qt//:qt.bzl", "qt_cc_binary", "qt_cc_library", "qt_resource")
+
+qt_resource(
+    name = "qt_demo_qrc",
+    files = [
+        "mainwindow.ui", "new_outfit.ui",
+    ],
+)
+
+qt_cc_library(
+    name = "cpp_object",
+    srcs = [
+        "mainwindow.cpp", "new_outfit.cpp",
+    ],
+    hdrs = [
+        "mainwindow.h", "new_outfit.h", "ui_new_outfit.h", "ui_mainwindow.h",
+    ],
+    deps = [
+        "@rules_qt//:qt",
+    ],
+)
+
+qt_cc_binary(
+    name = "est",
+    srcs = ["main.cpp"],
+    deps = [
+        ":cpp_object",
+        ":qt_demo_qrc",
+    ],
+)
