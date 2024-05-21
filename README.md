@@ -1,4 +1,4 @@
-*Outfit Estimator*
+**Outfit Estimator**
 
 Part of Yandex collaboration project.
 Calculates the coolness of outfit, based on evaluating the compatability using different properties of element of clothes.
